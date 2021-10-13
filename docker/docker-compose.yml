@@ -1,0 +1,12 @@
+version: '3.5'
+services:
+  web:
+    container_name: web
+    build:
+      context: './web'
+    image: web
+    ports:
+      - 127.0.0.1:80:80
+      - 127.0.0.1:6006:6006
+    volumes:
+      - ../:/var/www/html

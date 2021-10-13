@@ -1,0 +1,12 @@
+{
+    "name": "nestak/nicereply",
+    "autoload": {
+        "psr-4": {
+            "Nestak\\Nicereply\\": "src/"
+        }
+    },
+    "require": {
+        "rize/uri-template": "^0.3.4",
+        "guzzlehttp/guzzle": "^7.0.1"
+    }
+}
