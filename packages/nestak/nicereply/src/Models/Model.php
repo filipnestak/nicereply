@@ -30,7 +30,11 @@ abstract class Model
             if ($modelProperty instanceof Collection) {
                 $this->{$propertyName} = $modelProperty->map($data);
             } elseif ($modelProperty instanceof Model) {
-                $this->{$propertyName} = $modelProperty->map($data->{$propertyName});
+                if (!isset($data->{$propertyName})) {
+                    unset($this->{$propertyName});
+                } else {
+                    $this->{$propertyName} = $modelProperty->map($data->{$propertyName});
+                }
             } else {
                 if (isset($data->{$propertyName})) {
                     $this->{$propertyName} = $data->{$propertyName};
