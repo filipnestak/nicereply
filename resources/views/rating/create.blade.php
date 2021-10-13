@@ -15,6 +15,11 @@
                     </ul>
                 </div>
             @endif
+            @if(session('success'))
+                <div class="alert alert-success alert-dismissible">
+                    <i class="fa fa-check-circle"></i> {{ session('success') }}
+                </div>
+            @endif
 
             <form method="POST" action="{{ route('ratings.store') }}">
                 @method('POST')
